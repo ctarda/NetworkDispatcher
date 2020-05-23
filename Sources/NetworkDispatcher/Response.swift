@@ -1,6 +1,6 @@
 import Foundation
 
-struct Response<T> {
+public struct Response<T> {
     let value: T
     let response: URLResponse
 }
