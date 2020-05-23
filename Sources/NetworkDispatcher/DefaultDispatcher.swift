@@ -2,6 +2,10 @@ import Foundation
 import Combine
 
 public struct DefaultDispatcher: Dispatcher {
+    public init() {
+        
+    }
+    
     public func dispatch<T>(_ request: URLRequest, _ decoder: JSONDecoder = JSONDecoder()) -> AnyPublisher<Response<T>, Error> where T : Decodable {
         return URLSession.shared
             .dataTaskPublisher(for: request)
